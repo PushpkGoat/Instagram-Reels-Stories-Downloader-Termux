@@ -35,7 +35,7 @@ mkdir -p ~/bin
 Copy the script from our [setup page](https://termux-instagrab.pages.dev/#script) or run:
 
 ```bash
-curl -o ~/bin/termux-url-opener https://raw.githubusercontent.com/yourusername/instagrab/main/termux-url-opener
+curl -o ~/bin/termux-url-opener https://raw.githubusercontent.com/PushpkGoat/Instagram-Reels-Stories-Downloader-Termux/main/termux-url-opener
 chmod +x ~/bin/termux-url-opener
 ```
 
