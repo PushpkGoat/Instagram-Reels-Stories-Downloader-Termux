@@ -5,7 +5,7 @@
 
 **Download Instagram Reels, Stories, and more directly to your phone through Termux.**
 
-🔗 **Full Documentation:** [termux-instagrab.pages.dev](https://termux-instagrab.pages.dev/)
+🔗 **Full Documentation:** <a href="https://termux-instagrab.pages.dev/" target="_blank" rel="noopener noreferrer">termux-instagrab.pages.dev</a>
 
 
 
@@ -32,7 +32,9 @@ mkdir -p ~/bin
 ```
 
 ### 2. Install the Script
-Copy the script from our [setup page](https://termux-instagrab.pages.dev/#script) or run:
+Copy the script from our <a href="https://termux-instagrab.pages.dev/#script" target="_blank" rel="noopener noreferrer">
+    setup page
+</a> or run:
 
 ```bash
 curl -o ~/bin/termux-url-opener https://raw.githubusercontent.com/yourusername/instagrab/main/termux-url-opener
