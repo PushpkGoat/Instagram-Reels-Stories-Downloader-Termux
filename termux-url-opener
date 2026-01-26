@@ -1,0 +1,59 @@
+cat > ~/bin/termux-url-opener << 'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+
+URL="$1"
+DOWNLOAD_DIR="/storage/emulated/0/DCIM/Instagram_Reels"
+STORIES_DIR="/storage/emulated/0/DCIM/Instagram_Stories"
+
+nohup bash -c '
+mkdir -p "'"$DOWNLOAD_DIR"'"
+mkdir -p "'"$STORIES_DIR"'"
+
+URL="'"$URL"'"
+
+if [[ "$URL" == *"/stories/"* ]]; then
+    TARGET_DIR="'"$STORIES_DIR"'"
+    TYPE="story"
+else
+    TARGET_DIR="'"$DOWNLOAD_DIR"'"
+    TYPE="reel"
+fi
+
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+
+cd "$TARGET_DIR"
+
+termux-wake-lock
+termux-toast "📥 Downloading..."
+
+if [ "$TYPE" == "story" ]; then
+    gallery-dl --cookies ~/cookie.txt \
+        --filename "@{username}_$TIMESTAMP.{extension}" \
+        --directory "." \
+        "$URL"
+    RESULT=$?
+else
+    yt-dlp --cookies ~/cookie.txt \
+        -o "@%(uploader)s_$TIMESTAMP.%(ext)s" \
+        --merge-output-format mp4 \
+        "$URL"
+    RESULT=$?
+fi
+
+if [ $RESULT -eq 0 ]; then
+    termux-media-scan "$TARGET_DIR"
+    termux-notification --title "✅ Downloaded!" \
+        --content "$TYPE saved to DCIM" --id "insta"
+else
+    termux-notification --title "❌ Failed" \
+        --content "Check ~/insta.log" --id "insta"
+fi
+
+termux-wake-unlock
+' > ~/insta.log 2>&1 &
+
+sleep 0.5
+exit 0
+EOF
+
+chmod +x ~/bin/termux-url-opener
