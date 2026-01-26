@@ -92,5 +92,3 @@ This is for personal use only. Please:
 
 **Built because I was tired of sketchy download sites. Hope it helps you too.**
 
-
-in this how do you make the link open in a new tab 
