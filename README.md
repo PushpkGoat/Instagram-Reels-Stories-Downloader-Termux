@@ -2,7 +2,8 @@
 
 
 # InstaGrab - Instagram Downloader for Termux
-<small>CURRENTLY RATE LIMITS</small>
+<b><sub>CURRENTLY RATE LIMITS</b> -- <i>fixing it rn</i></sub>
+
 **Download Instagram Reels, Stories, and more directly to your phone through Termux.**
 
 🔗 **Full Documentation:** [Termux InstaGrab](https://termux-instagrab.pages.dev/)
