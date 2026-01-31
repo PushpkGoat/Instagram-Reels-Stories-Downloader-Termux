@@ -3,6 +3,7 @@
 
 # InstaGrab - Instagram Downloader for Termux
 <b><sub>CURRENTLY RATE LIMITS</b> -- <i>fixing it rn</i></sub>
+Do not use cookies just to download Reels, as Instagram flags it as another session.Might fix this.
 
 **Download Instagram Reels, Stories, and more directly to your phone through Termux.**
 
